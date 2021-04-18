@@ -1,5 +1,4 @@
-# Group9_2021
-#DeepChat
+# DeepChat
 
 TOP REQUIREMENT: Need Google Colab for deployment test! (HEROKU Deployment failed, looking for alternatives)
 
