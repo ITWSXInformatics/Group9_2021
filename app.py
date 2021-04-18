@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)   #starts ngrok when the app is run
 
 #created chatbot with name john 
 #SQLStorageAdapter which allows the chat bot to connect to SQL databases. By default, this adapter will create a SQLite database.
