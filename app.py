@@ -38,7 +38,7 @@ def get_bot_response():
 
     if "bye" in userText.lower():
         conv = None
-        return ("bye\n" + ("-" * 30 + "\n") * 3)
+        return ("BYY!!!!")
 
     cpipe = conversational_pipeline([conv], device=1)
     response = cpipe.generated_responses[-1]
