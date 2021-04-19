@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
 from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
@@ -11,9 +9,7 @@ from transformers import pipeline, Conversation
 conversational_pipeline = pipeline("conversational",
                                    model="microsoft/DialoGPT-medium")
 
-user_str = None
 conv = None
-cpipe = None
 
 
 @app.route("/")
@@ -24,7 +20,7 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-
+    global conv
     if conv is None:
         conv = Conversation(userText)
     else:
