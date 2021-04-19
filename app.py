@@ -6,7 +6,7 @@ from transformers import pipeline, Conversation
 parser = argparse.ArgumentParser()
 parser.add_argument("--port", "-p", type=int, default=None)
 parser.add_argument("--ngrok", "-n", action="store_true")
-parser.add_argument("--gpt_capacity", "-c", type=str, default="large")
+parser.add_argument("--gpt_capacity", "-c", type=str, default="medium")
 
 params = parser.parse_args()
 
@@ -48,4 +48,6 @@ def get_bot_response():
 if __name__ == "__main__":
     if params.ngrok:
         run_with_ngrok(app)
-    app.run(port=params.port)
+        app.run()
+    else:
+        app.run(port=params.port)
